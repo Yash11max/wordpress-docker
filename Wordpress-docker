@@ -1,0 +1,5 @@
+docker network create mynetwork
+docker run -d \ -e MARIADB_USER=db_user \ -e MARIADB_PASSWORD=db_pass \ -e MARIADB_DATABASE=frontend_app \ -e MARIADB_ROOT_PASSWORD=mariadb_root_pass \ --network mynetwork \ --name my>
+docker run -d \ -e WORDPRESS_DB_HOST=my_backend_db \ -e WORDPRESS_DB_USER=db_user \ -e WORDPRESS_DB_PASSWORD=db_pass \ -e WORDPRESS_DB_NAME=frontend_app \ -p 8080:80 \ --network mynet>
+docker container ls
+http://<your-ec2-ip>:8080
